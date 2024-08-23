@@ -213,7 +213,7 @@
         <boolean name="editable_wfc_mode_bool" value="false" />
         <int name="carrier_default_wfc_ims_mode_int" value="2" />
     </carrier_config>
-    <carrier_config mcc="222" mnc="10">
+    <carrier_config mcc="222" mnc="7,8,10,35,49,54">
         <boolean name="carrier_volte_available_bool" value="true" />
     </carrier_config>
     <carrier_config mcc="226" mnc="10">
