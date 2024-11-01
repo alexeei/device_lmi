@@ -140,8 +140,6 @@ PRODUCT_PACKAGES += \
 
 BOARD_HAVE_QCOM_FM := false
 
-$(call inherit-product-if-exists, vendor/qcom/opensource/commonsys-intf/bluetooth/bt-system-opensource-product.mk)
-
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth.audio-impl \
     vendor.qti.hardware.bluetooth_audio@2.1.vendor \
