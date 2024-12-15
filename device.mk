@@ -358,7 +358,7 @@ PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
 # Parts
 PRODUCT_PACKAGES += \
-    XiaomiParts
+    DeviceParts
 
 # Perf
 PRODUCT_PACKAGES += \
@@ -434,6 +434,7 @@ PRODUCT_BOOT_JARS += \
 # Thermal
 PRODUCT_PACKAGES += \
     android.hardware.thermal@2.0 \
+    android.hardware.thermal@2.0.vendor \
     android.hardware.thermal-service.qti
 
 # Touchscreen

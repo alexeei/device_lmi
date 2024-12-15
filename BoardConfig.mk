@@ -9,6 +9,7 @@ DEVICE_PATH := device/xiaomi/lmi
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 BUILD_BROKEN_VENDOR_PROPERTY_NAMESPACE := true
 
+
 # ANT+
 BOARD_ANT_WIRELESS_DEVICE := "qualcomm-hidl"
 
@@ -96,30 +97,41 @@ DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/vintf/manifest.xml
 # Kernel
 BOARD_KERNEL_CMDLINE := \
     androidboot.hardware=qcom \
+    androidboot.fstab_suffix=qcom \
     androidboot.init_fatal_reboot_target=recovery \
     androidboot.memcg=1 \
+    kpti=off \
     androidboot.usbcontroller=a600000.dwc3 \
     cgroup.memory=nokmem,nosocket \
-    earlycon=msm_geni_serial,0xa90000 \
     loop.max_part=7 \
-    lpm_levels.sleep_disabled=1 \
     msm_rtb.filter=0x237 \
     reboot=panic_warm \
     service_locator.enable=1 \
-    swiotlb=2048
+    iptable_raw.raw_before_defrag=1 \
+    ip6table_raw.raw_before_defrag=1 \
+    swiotlb=0
 
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_IMAGE_NAME := Image
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_RAMDISK_OFFSET := 0x01000000
+BOARD_RAMDISK_USE_LZ4 := true
+TARGET_KERNEL_ARCH := arm64
+TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-gnu-
+TARGET_KERNEL_CLANG_PATH := $(shell pwd)/prebuilts/clang/host/linux-x86/neutron-clang
+KERNEL_CC := CC=$(TARGET_KERNEL_CLANG_PATH)/bin/clang
 
 TARGET_KERNEL_CLANG_COMPILE := true
-TARGET_KERNEL_ADDITIONAL_FLAGS := DTC_EXT=$(shell pwd)/prebuilts/misc/$(HOST_OS)-x86/dtc/dtc
-TARGET_KERNEL_SOURCE := kernel/xiaomi/lmi
-TARGET_KERNEL_CONFIG := lmi_defconfig
+
+TARGET_KERNEL_ADDITIONAL_FLAGS := LD=ld.lld AR=llvm-ar NM=llvm-nm OBJCOPY=llvm-objcopy OBJDUMP=llvm-objdump STRIP=llvm-strip 
+TARGET_KERNEL_SOURCE := kernel/xiaomi/sm8250
+TARGET_KERNEL_CONFIG := vendor/lmi_defconfig
 TARGET_KERNEL_ADDITIONAL_FLAGS := \
     LLVM=1 \
-    LLVM_IAS=1
+    LLVM_IAS=1 \
+    QCLinker=1
+TARGET_KERNEL_CLANG_VERSION := neutron
+TARGET_KERNEL_LLVM_BINUTILS := true
 
 # Lineage Health
 TARGET_HEALTH_CHARGING_CONTROL_SUPPORTS_BYPASS := false
@@ -137,13 +149,13 @@ TARGET_BOARD_PLATFORM := kona
 # Partitions
 ifeq ($(PRODUCT_VIRTUAL_AB_OTA),true)
 BOARD_BOOTIMAGE_PARTITION_SIZE := 201326592
-BOARD_USERDATAIMAGE_PARTITION_SIZE := 114135379968
+#BOARD_USERDATAIMAGE_PARTITION_SIZE := 114135379968
 BOARD_VENDOR_BOOTIMAGE_PARTITION_SIZE := 100663296
 else
 BOARD_BOOTIMAGE_PARTITION_SIZE := 134217728
 BOARD_CACHEIMAGE_PARTITION_SIZE := 402653184
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 134217728
-BOARD_USERDATAIMAGE_PARTITION_SIZE := 114898743296
+#BOARD_USERDATAIMAGE_PARTITION_SIZE := 114898743296
 endif
 BOARD_DTBOIMG_PARTITION_SIZE := 33554432
 ifneq ($(WITH_GMS),true)
@@ -187,6 +199,11 @@ TARGET_COPY_OUT_ODM := odm
 TARGET_COPY_OUT_PRODUCT := product
 TARGET_COPY_OUT_SYSTEM_EXT := system_ext
 TARGET_COPY_OUT_VENDOR := vendor
+
+# Disable sparse on all filesystem images
+TARGET_USERIMAGES_SPARSE_EROFS_DISABLED := true
+TARGET_USERIMAGES_SPARSE_EXT_DISABLED := true
+TARGET_USERIMAGES_SPARSE_F2FS_DISABLED := true
 
 # Properties
 TARGET_ODM_PROP += $(DEVICE_PATH)/props/odm.prop
