@@ -18,7 +18,6 @@
 
 # Devices
 /dev/xlog                                                   u:object_r:sound_device:s0
-/dev/ir_spi                                                 u:object_r:vendor_ir_spi_device:s0
 /dev/elliptic(.*)?                                          u:object_r:sound_device:s0
 /dev/xiaomi-touch                                           u:object_r:touchfeature_device:s0
 
@@ -49,6 +48,10 @@
 # Hals
 /vendor/bin/hw/vendor\.xiaomi\.hardware\.touchfeature@1\.0-service       u:object_r:hal_touchfeature_default_exec:s0
 /vendor/bin/mlipayd@1.1                                                  u:object_r:hal_mlipay_default_exec:s0
+
+#IR
+/dev/lirc[0-9]+                                                    u:object_r:lirc_device:s0
+/vendor/bin/hw/android\.hardware\.ir-service\.xiaomi               u:object_r:hal_ir_default_exec:s0
 
 #USB fast charge
 /sys/kernel/fast_charge/force_fast_charge                               u:object_r:sysfs_htsr:s0
