@@ -27,4 +27,6 @@
     <!-- The radius of the enrollment progress bar, in dp -->
     <integer name="config_udfpsEnrollProgressBar" translatable="false">96</integer>
 
+    <bool name="config_show_battery_cycle_count">true</bool>
+
 </resources>
