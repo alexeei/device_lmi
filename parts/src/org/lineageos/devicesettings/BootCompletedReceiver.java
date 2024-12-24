@@ -25,6 +25,7 @@ import android.util.Log;
 
 import org.lineageos.devicesettings.utils.FileUtils;
 import android.content.SharedPreferences;
+import android.os.SystemProperties;
 import androidx.preference.PreferenceManager;
 
 import org.lineageos.devicesettings.popupcamera.PopupCameraUtils;

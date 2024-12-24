@@ -16,31 +16,31 @@
      limitations under the License.
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="org.lineageos.devicesettings"
-    android:sharedUserId="android.uid.system"
-    android:versionCode="1"
-    android:versionName="1.0" >
+    android:sharedUserId="android.uid.system">
 
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.GET_TASKS" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
     <uses-permission android:name="android.permission.INJECT_EVENTS" />
+    <uses-permission android:name="lineageos.permission.HARDWARE_ABSTRACTION_ACCESS" />
 
 
-    <uses-sdk
-        android:minSdkVersion="24"
-        android:targetSdkVersion="30"/>
 
     <application
         android:label="@string/device_settings_app_name"
+        android:defaultToDeviceProtectedStorage="true"
+        android:directBootAware="true"
+        android:theme="@style/Theme.SubSettingsBase"
         android:persistent="true">
         
-        <receiver android:name=".BootCompletedReceiver">
-            <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED" />
-                <category android:name="android.intent.category.DEFAULT" />
+        <receiver android:name=".BootCompletedReceiver" android:exported="false">
+                <intent-filter android:priority="1000">
+                <action android:name="android.intent.action.LOCKED_BOOT_COMPLETED" />
             </intent-filter>
         </receiver>        
    
@@ -48,7 +48,8 @@
         <activity
             android:name=".display.DcDimmingSettingsActivity"
             android:label="@string/dc_dimming_enable_title"
-            android:theme="@style/Theme.SubSettingsBase">
+            android:icon="@drawable/ic_dcdimming"
+            android:exported="true">
             <intent-filter>
                 <action android:name="com.android.settings.action.IA_SETTINGS" />
             </intent-filter>
@@ -64,10 +65,14 @@
         <activity
             android:name=".touchsampling.TouchSamplingSettingsActivity"
             android:label="@string/htsr_title"
-            android:theme="@style/Theme.SubSettingsBase" >
+            android:exported="true" >
             <intent-filter>
                 <action android:name="com.android.settings.action.IA_SETTINGS" />
             </intent-filter>
+
+            <meta-data
+                android:name="com.android.settings.order"
+                android:value="-20" />
             <meta-data
                 android:name="com.android.settings.category"
                 android:value="com.android.settings.category.ia.display" />
@@ -79,10 +84,14 @@
         <activity
             android:name=".fch.FchSettingsActivity"
             android:label="@string/fch_title"
-            android:theme="@style/Theme.SubSettingsBase" >
+            android:exported="true" >
             <intent-filter>
                 <action android:name="com.android.settings.action.IA_SETTINGS" />
             </intent-filter>
+
+            <meta-data
+                android:name="com.android.settings.order"
+                android:value="-20" />
             <meta-data
                 android:name="com.android.settings.category"
                 android:value="com.android.settings.category.ia.battery" />
@@ -95,15 +104,18 @@
         <!-- Popup camera -->
         <service
             android:name=".popupcamera.PopupCameraService"
-            android:permission="PopupCameraService" >
+            android:permission="PopupCameraService"
+            android:exported="true" >
         </service>
+
         <activity
             android:name=".popupcamera.PopupCameraSettingsActivity"
             android:label="@string/popup_title"
-            android:theme="@style/Theme.SubSettingsBase" >
+            android:exported="false" >
             <intent-filter>
                 <action android:name="com.android.settings.action.IA_SETTINGS" />
             </intent-filter>
+
             <meta-data
                 android:name="com.android.settings.category"
                 android:value="com.android.settings.category.ia.system" />
@@ -120,10 +132,11 @@
             android:name=".speaker.ClearSpeakerActivity"
             android:icon="@drawable/ic_clear_speaker"
             android:label="@string/clear_speaker_title"
-            android:theme="@style/Theme.SubSettingsBase">
+            android:exported="false">
             <intent-filter>
                 <action android:name="com.android.settings.action.IA_SETTINGS" />
             </intent-filter>
+
             <meta-data
                 android:name="com.android.settings.category"
                 android:value="com.android.settings.category.ia.system" />
