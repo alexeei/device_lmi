@@ -447,6 +447,8 @@ PRODUCT_PACKAGES += \
     android.hardware.thermal@2.0.vendor \
     android.hardware.thermal-service.qti
 
+$(call soong_config_set,qti_thermal,netlink,false)
+
 # Touchscreen
 PRODUCT_PACKAGES += \
     libtinyxml2
