@@ -81,6 +81,8 @@
                 android:resource="@string/htsr_summary" />
         </activity>
 
+
+        <!-- Fastcharge usb -->
         <activity
             android:name=".fch.FchSettingsActivity"
             android:label="@string/fch_title"

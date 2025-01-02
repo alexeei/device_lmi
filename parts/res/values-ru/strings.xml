@@ -20,7 +20,6 @@
     <string name="htsr_summary">Увеличение частоты опроса для снижения задержек</string>
     <string name="fch_title">Быстрая зарядка от USB </string>
     <string name="fch_summary">Увеличение тока зарядки до 900мА. Теоретически это может повредить оборудование.</string>
-
 <!-- Device specific settings -->
     <string name="device_settings_app_name">Расширенные настройки</string>
   <!-- Device Extras -->

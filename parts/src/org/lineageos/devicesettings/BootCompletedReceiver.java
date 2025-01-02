@@ -29,8 +29,9 @@ import android.os.SystemProperties;
 import androidx.preference.PreferenceManager;
 
 import org.lineageos.devicesettings.popupcamera.PopupCameraUtils;
-import org.lineageos.devicesettings.touchsampling.TouchSamplingUtils;
+
 import org.lineageos.devicesettings.fch.FchUtils;
+
 
 
 public class BootCompletedReceiver extends BroadcastReceiver {
@@ -41,16 +42,23 @@ public class BootCompletedReceiver extends BroadcastReceiver {
     private static final String DC_DIMMING_ENABLE_KEY = "dc_dimming_enable";
     private static final String DC_DIMMING_NODE = "/sys/devices/platform/soc/soc:qcom,dsi-display-primary/dimlayer_exposure";
 
+    private static final String HTSR_ENABLE_KEY = "htsr_enable";
+    private static final String HTSR_FILE = "/sys/devices/virtual/touch/touch_dev/bump_sample_rate";
+
+
     @Override
     public void onReceive(final Context context, Intent intent) {
         if (DEBUG) Log.d(TAG, "Received boot completed intent");
         PopupCameraUtils.startService(context);
-        TouchSamplingUtils.restoreSamplingValue(context);
         FchUtils.restoreFchValue(context);
+
         
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
-
-        boolean dcDimmingEnabled = sharedPrefs.getBoolean(DC_DIMMING_ENABLE_KEY, false);
-        FileUtils.writeLine(DC_DIMMING_NODE, dcDimmingEnabled ? "1" : "0");
+        
+         FileUtils.writeLine(DC_DIMMING_NODE,
+            sharedPrefs.getBoolean(DC_DIMMING_ENABLE_KEY, false) ? "1" : "0");
+        FileUtils.writeLine(HTSR_FILE,
+            sharedPrefs.getBoolean(HTSR_ENABLE_KEY, false) ? "1" : "0");
+        
     }
 }
