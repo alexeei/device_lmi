@@ -7,6 +7,10 @@ vendor.camera.boot_complete                 u:object_r:vendor_camera_prop:s0
 vendor.camera.aux.                          u:object_r:vendor_camera_prop:s0
 ro.camera.req.fmq.size                      u:object_r:vendor_ro_camera_prop:s0
 ro.camera.res.fmq.size                      u:object_r:vendor_ro_camera_prop:s0
+ro.boot.camera.				                u:object_r:vendor_camera_prop:s0
+ro.boot.camera.config                       u:object_r:vendor_camera_sensor_prop:s0
+persist.vendor.low.cutoff                   u:object_r:vendor_camera_prop:s0
+ro.vendor.audio.us.proximity                u:object_r:vendor_camera_prop:s0
 
 # Fastcharge HAL
 persist.vendor.sec.fastchg_enabled              u:object_r:vendor_fastcharge_prop:s0
