@@ -20,8 +20,7 @@ $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 #miuicam
 $(call inherit-product, vendor/xiaomi/lmi-miuicamera/config.mk)
 
-#BCR
-$(call inherit-product, vendor/xiaomi/bcr/bcr.mk)
+
 
 # Set Boot Animination Resolution
 TARGET_BOOT_ANIMATION_RES := 1080
@@ -38,12 +37,11 @@ TARGET_ENABLE_BLUR := true
 TARGET_BOOT_ANIMATION_RES := 1080
 TARGET_HAS_UDFPS := true
 TARGET_FACE_UNLOCK_SUPPORTED := true
-#TARGET_PREBUILT_LAWNCHAIR_LAUNCHER := true
+EVO_BUILD_TYPE := COMMUNITY
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
 BUILD_FINGERPRINT := Redmi/lmi/lmi:12/RKQ1.211001.001/V13.0.3.0.SJKMIXM:user/release-keys
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-  BuildDesc="lmi-user 12 RKQ1.211001.001 V13.0.6.0.SJKCNXM release-keys" \
-  RisingChipset="Qualcomm Snapdragon 865" 
+  BuildDesc="lmi-user 12 RKQ1.211001.001 V13.0.6.0.SJKCNXM release-keys" 
