@@ -154,6 +154,10 @@ ro.surface_flinger.wcg_composition_dataspace=143261696
 ro.surface_flinger.max_virtual_display_dimension=4096
 ro.surface_flinger.max_frame_buffer_acquired_buffers=3
 
+#HWUI
+debug.hwui.use_hint_manager=true
+debug.sf.enable_adpf_cpu_hint=true
+
 # Keystore
 ro.hardware.keystore_desede=true
 
