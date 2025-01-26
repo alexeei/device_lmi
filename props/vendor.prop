@@ -122,7 +122,7 @@ vendor.display.enable_camera_smooth=1
 vendor.display.enable_allow_idle_fallback=1
 vendor.display.disable_idle_time_video=1
 vendor.display.disable_idle_time_hdr=1
-debug.sf.auto_latch_unsignaled=1
+debug.sf.auto_latch_unsignaled=0
 
 # DPM
 persist.vendor.dpm.feature=1
