@@ -167,13 +167,8 @@ debug.sf.enable_adpf_cpu_hint=true
 ro.hardware.keystore_desede=true
 
 # Media
-media.stagefright.enable-aac=true
-media.stagefright.enable-fma2dp=true
-media.stagefright.enable-http=true
-media.stagefright.enable-player=true
-media.stagefright.enable-qcp=true
-media.stagefright.enable-scan=true
 media.stagefright.thumbnail.prefer_hw_codecs=true
+debug.stagefright.c2inputsurface=-1
 
 # Netflix
 ro.netflix.bsp_rev=Q8250-19134-1
