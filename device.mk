@@ -11,7 +11,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/developer_gsi_keys.mk)
 
 # Setup dalvik vm configs
-$(call inherit-product, frameworks/native/build/phone-xhdpi-8192-dalvik-heap.mk)
+$(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 
 # Get non-open-source specific aspects
 $(call inherit-product, vendor/xiaomi/lmi/lmi-vendor.mk)
@@ -281,11 +281,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/media/media_profiles.xml:$(TARGET_COPY_OUT_ODM)/etc/media_profiles_V1_0.xml \
     $(LOCAL_PATH)/configs/media/media_profiles.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles.xml
 
-PRODUCT_COPY_FILES += \
-    hardware/qcom-caf/sm8250/media/conf_files/kona/media_codecs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml \
-    hardware/qcom-caf/sm8250/media/conf_files/kona/media_codecs_performance.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance_kona_vendor.xml \
-    hardware/qcom-caf/sm8250/media/conf_files/kona/mediacodec-seccomp.policy:$(TARGET_COPY_OUT_VENDOR)/etc/mediacodec-seccomp.policy \
-    hardware/qcom-caf/sm8250/media/conf_files/kona/system_properties.xml:$(TARGET_COPY_OUT_VENDOR)/etc/system_properties.xml
 
 PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_c2_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_c2_audio.xml \

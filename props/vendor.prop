@@ -167,6 +167,7 @@ debug.sf.enable_adpf_cpu_hint=true
 ro.hardware.keystore_desede=true
 
 # Media
+debug.c2.use_dmabufheaps=1
 media.stagefright.thumbnail.prefer_hw_codecs=true
 debug.stagefright.c2inputsurface=-1
 
