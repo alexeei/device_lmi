@@ -73,4 +73,7 @@
           before the screen has had chance to switch out of HBM mode -->
      <integer name="config_udfpsDimmingDisableDelay">35</integer>
 
+       <!-- Determines whether the shell features all run on another thread. -->
+      <bool name="config_enableShellMainThread">true</bool>
+
 </resources>
