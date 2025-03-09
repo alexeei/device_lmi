@@ -217,6 +217,8 @@ PRODUCT_PACKAGES += \
 
 # FOD
 TARGET_HAS_UDFPS := true
+PRODUCT_PACKAGES += \
+     liblzma.vendor
 
 # Google Camera
 PRODUCT_COPY_FILES += \
