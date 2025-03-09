@@ -58,6 +58,7 @@ vendor.audio.use.sw.ape.decoder=true
 vendor.audio.use.sw.mpegh.decoder=true
 vendor.audio.volume.headset.gain.depcal=true
 vendor.voice.path.for.pcm.voip=true
+audio.deep_buffer.media=true
 
 # Bluetooth
 bluetooth.device.class_of_device=90,2,12

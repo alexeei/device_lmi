@@ -132,8 +132,7 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     vendor.goodix.hardware.biometrics.fingerprint@2.1.vendor \
-    vendor.xiaomi.hardware.fingerprintextension@1.0.vendor \
-    vendor.xiaomi.hardware.touchfeature@1.0.vendor
+    vendor.xiaomi.hardware.fingerprintextension@1.0.vendor 
 
 # Bluetooth
 -include vendor/qcom/opensource/commonsys-intf/bluetooth/bt-commonsys-intf-board.mk
@@ -327,8 +326,7 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/xiaomi \
     hardware/google/interfaces \
     hardware/google/pixel \
-    hardware/lineage/interfaces/power-libperfmgr \
-    hardware/qcom-caf/common/libqti-perfd-client 
+    hardware/lineage/interfaces/power-libperfmgr 
 
 # OMX
 TARGET_SUPPORTS_OMX_SERVICE := false
