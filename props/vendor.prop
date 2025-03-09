@@ -220,6 +220,16 @@ ro.telephony.default_cdma_sub=0
 ro.vendor.radio.5g=3
 telephony.lteOnCdmaDevice=1
 
+ persist.radio.add_power_save=1 
+ pm.sleep_mode=1 
+ ro.ril.disable.power.collapse=0 
+ ro.ril.fast.dormancy.rule=1 
+ ro.ril.fast.dormancy.timeout=3 
+ ro.mot.eri.losalert.delay=100 
+ ro.vendor.use_data_netmgrd=true 
+ ro.vold.umsdirtyratio=20 
+ power.saving.mode=1
+
 persist.vendor.radio.NO_STAPA=1
 persist.vendor.radio.VT_HYBRID_ENABLE=1
 persist.radio.dynamic_sar=false
