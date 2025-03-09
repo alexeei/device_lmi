@@ -458,7 +458,7 @@ PRODUCT_SHIPPING_API_LEVEL := 30
 
 # Shims
 PRODUCT_PACKAGES += \
-    libcrypto-v34
+    libcrypto-v33
 
 # Telephony
 PRODUCT_PACKAGES += \
