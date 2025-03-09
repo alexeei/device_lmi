@@ -175,6 +175,18 @@ PRODUCT_PACKAGES += \
     disable_configstore \
     vendor.qti.hardware.capabilityconfigstore@1.0.vendor
 
+
+# Dex2oat
+ PRODUCT_VENDOR_PROPERTIES += \
+  dalvik.vm.dex2oat-filter=speed \
+  dalvik.vm.dex2oat-threads=8 \
+  dalvik.vm.image-dex2oat-filter=speed \
+  dalvik.vm.image-dex2oat-threads=8 \
+  pm.dexopt.bg-dexopt=everything \
+  pm.dexopt.boot=verify \
+  pm.dexopt.first-boot=quicken \
+  pm.dexopt.install=speed-profile
+
 # Display
 PRODUCT_PACKAGES += \
     android.hardware.graphics.mapper@3.0-impl-qti-display \
