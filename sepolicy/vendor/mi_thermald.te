@@ -11,6 +11,7 @@ allow mi_thermald self:capability {
   chown
   fowner
   fsetid
+  sys_admin
 };
 
 # Allow mi_thermald to access leds sysfs

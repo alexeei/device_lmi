@@ -4,6 +4,9 @@ ro.build.flavor                 u:object_r:build_prop:s0
 ro.product.marketname           u:object_r:build_prop:s0
 ro.product.mod_device           u:object_r:build_prop:s0
 
+# Hardware
+ ro.hardware.chipname     u:object_r:exported_default_prop:s0
+
 # IMEI
 persist.radio.imei              u:object_r:deviceid_prop:s0
 persist.radio.meid              u:object_r:deviceid_prop:s0
@@ -29,4 +32,5 @@ persist.wa.dump                             u:object_r:vendor_camera_prop:s0
 persist.wa.timelog                          u:object_r:vendor_camera_prop:s0
 persist.sys.camlog.system.af                u:object_r:vendor_camera_prop:s0
 MACE_CPP_MIN_VLOG_LEVEL                     u:object_r:vendor_camera_prop:s0
+
 

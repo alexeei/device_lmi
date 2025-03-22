@@ -2,3 +2,8 @@ hal_client_domain(system_app, hal_mlipay)
 
 allow system_app sysfs_htsr:dir search;
 allow system_app sysfs_htsr:file rw_file_perms;
+
+allow system_app {
+    storaged
+    system_suspend
+}:binder { call };

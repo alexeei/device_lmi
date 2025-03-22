@@ -6,3 +6,7 @@ allow hal_power_default sysfs_touchpanel:{
   file
   lnk_file
 } rw_file_perms;
+
+allow hal_power_default {
+   vendor_sysfs_devfreq
+ }:dir search;

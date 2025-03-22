@@ -1,1 +1,3 @@
 allow vendor_netmgrd vendor_diag_device:chr_file { open read write ioctl };
+
+allow vendor_netmgrd vendor_netmgrd:capability { sys_admin };
