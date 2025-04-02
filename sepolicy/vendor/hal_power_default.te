@@ -10,3 +10,18 @@ allow hal_power_default sysfs_touchpanel:{
 allow hal_power_default {
    vendor_sysfs_devfreq
  }:dir search;
+
+allow hal_power_default {
+   vendor_sysfs_msm_subsys
+ }:dir search;
+ 
+ 
+ allow hal_power_default {
+   proc
+ }:file open;
+ 
+ allow hal_power_default {
+   sysfs
+ }:file write;
+
+allow hal_power_default vendor_sysfs_msm_subsys:file { open write };
