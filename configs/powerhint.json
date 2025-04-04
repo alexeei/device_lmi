@@ -618,6 +618,11 @@
       "Value": "1766400"
     },
     {
+       "PowerHint": "DISPLAY_IDLE",
+       "Type": "DoHint",
+       "Value": "DISPLAY_INACTIVE"
+    },
+    {
       "PowerHint": "DISPLAY_INACTIVE",
       "Node": "TASchedtuneBoost",
       "Duration": 0,
