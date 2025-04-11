@@ -33,6 +33,9 @@
 
     <bool name="config_show_battery_cycle_count">false</bool>
 
+    <!-- Max network scan search time in seconds -->
+      <integer name="config_network_scan_helper_max_search_time_sec">254</integer>
+
      <!-- Whether to trigger OnFingerDown with regular action down events -->
     <bool name="config_udfpsNeedsFingerDownOnActionDown">false</bool>
 
