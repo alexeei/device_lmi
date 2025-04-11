@@ -128,10 +128,11 @@ PRODUCT_COPY_FILES += \
 
 # Biometrics
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint-service.xiaomi
+    android.hardware.biometrics.fingerprint@2.3-service.lmi
 
 PRODUCT_PACKAGES += \
-    vendor.goodix.hardware.biometrics.fingerprint@2.1.vendor 
+    vendor.goodix.hardware.biometrics.fingerprint@2.1.vendor \
+    vendor.xiaomi.hardware.fingerprintextension@1.0.vendor 
 
 # Bluetooth
 -include vendor/qcom/opensource/commonsys-intf/bluetooth/bt-commonsys-intf-board.mk
@@ -230,15 +231,6 @@ PRODUCT_PACKAGES += \
 TARGET_HAS_UDFPS := true
 PRODUCT_PACKAGES += \
      liblzma.vendor
-
-PRODUCT_PACKAGES += \
-    libudfpshandler \
-    libkeymaster_messages.vendor \
-    libkeymaster_portable.vendor \
-    sensors.udfps 
-    
-
-
 
 # Google Camera
 PRODUCT_COPY_FILES += \
