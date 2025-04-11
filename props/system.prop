@@ -18,6 +18,9 @@ debug.hwui.skia_use_perfetto_track_events=false
 # Disable MTE Async for system server
  arm64.memtag.process.system_server=off
 
+# Feature flags
+ persist.sys.fflag.override.settings_enable_monitor_phantom_procs=false
+
 # IMS
 persist.dbg.volte_avail_ovr=1
 persist.dbg.vt_avail_ovr=1
