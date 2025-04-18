@@ -316,6 +316,10 @@ PRODUCT_COPY_FILES += \
      $(LOCAL_PATH)/media/media_profiles.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles.xml
  
 
+# Light
+ PRODUCT_PACKAGES += \
+     android.hardware.light-service.lineage
+
 
 # NFC
 PRODUCT_PACKAGES += \
