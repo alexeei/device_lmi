@@ -99,6 +99,7 @@ PRODUCT_PACKAGES += \
     android.hardware.audio@6.0-impl \
     audio.bluetooth.default \
     audio.primary.kona \
+    audio.primary.default \
     audio.r_submix.default \
     audio.usb.default \
     libbatterylistener \
@@ -113,7 +114,7 @@ PRODUCT_PACKAGES += \
     libvolumelistener
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml
+    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/audio/,$(TARGET_COPY_OUT_VENDOR)/etc)
 
 PRODUCT_COPY_FILES += \
     hardware/qcom-caf/sm8250/audio/configs/common/bluetooth_qti_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_qti_audio_policy_configuration.xml \
@@ -321,17 +322,12 @@ PRODUCT_PACKAGES += \
     android.hardware.nfc@1.2-service \
     com.android.nfc_extras \
     libchrome.vendor \
-    NfcNci \
-    SecureElement \
     Tag
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/nfc/libnfc-nci.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nci.conf \
     $(LOCAL_PATH)/configs/nfc/libnfc-nxp.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nxp.conf
 
-# Lights
-PRODUCT_PACKAGES += \
-    android.hardware.light-service.xiaomi
 
 # Motor
 PRODUCT_PACKAGES += \
@@ -387,8 +383,7 @@ PRODUCT_PACKAGES += \
     libcodec2_soft_vp8enc \
     libcodec2_soft_vp9dec \
     libcodec2_soft_vp9enc \
-    libcodec2_soft_xaacdec \
-    libmm-omxcore 
+    libcodec2_soft_xaacdec 
     
 
 # Overlays
@@ -418,6 +413,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.power-service.lineage-libperfmgr \
     libqti-perfd-client 
+
 
 # sendhint utility
 PRODUCT_PACKAGES += \
@@ -508,8 +504,7 @@ PRODUCT_BOOT_JARS += \
 # Thermal
 PRODUCT_PACKAGES += \
     android.hardware.thermal@2.0 \
-    android.hardware.thermal@2.0.vendor \
-    android.hardware.thermal@2.0-service.qti
+    android.hardware.thermal@2.0.vendor 
 
 $(call soong_config_set,qti_thermal,netlink,false)
 
