@@ -281,6 +281,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.ir-service.xiaomi
 
+# Platform
+TARGET_BOARD_PLATFORM := kona
+
 # Lineage Health
 PRODUCT_PACKAGES += \
     vendor.lineage.health-service.default

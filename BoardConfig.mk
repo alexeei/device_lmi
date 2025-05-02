@@ -166,7 +166,7 @@ TARGET_USES_ION := true
 # Platform
 BOARD_VENDOR := xiaomi
 BOARD_USES_QCOM_HARDWARE := true
-TARGET_BOARD_PLATFORM := kona
+
 
 # Partitions
 ifeq ($(PRODUCT_VIRTUAL_AB_OTA),true)
