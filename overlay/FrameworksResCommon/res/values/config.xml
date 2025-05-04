@@ -181,6 +181,9 @@
          skipped, the restoring is handled by modem if true. -->
     <bool name="skip_restoring_network_selection">true</bool>
 
+     <!-- Whether the new Auto Selection Network UI should be shown -->
+     <bool name="config_enableNewAutoSelectNetworkUI">true</bool>
+
     <!--  Maximum number of supported users -->
     <integer name="config_multiuserMaximumUsers">4</integer>
 
