@@ -167,6 +167,8 @@ PRODUCT_PACKAGES += \
     libpng.vendor \
     vendor.qti.hardware.camera.device@1.0.vendor \
     vendor.qti.hardware.camera.postproc@1.0.vendor
+
+$(call soong_config_set,camera,override_format_from_reserved,true)
     
 # Charger
 PRODUCT_PACKAGES += \
@@ -230,6 +232,7 @@ PRODUCT_PACKAGES += \
     vendor.lineage.fastcharge@1.0-service.xiaomi_sm8250
 
 # FOD
+$(call soong_config_set,surfaceflinger,udfps_lib,//$(LOCAL_PATH):libudfps_extension.xiaomi_lmi)
 TARGET_HAS_UDFPS := true
 PRODUCT_PACKAGES += \
      liblzma.vendor
@@ -252,6 +255,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.health@2.1-impl \
     android.hardware.health@2.1-service
+
+$(call soong_config_set,lineage_health,charging_control_supports_bypass,false)
+
+$(call soong_config_set,libinit,vendor_init_lib,libinit_lmi)
 
 # HotwordEnrollement
 PRODUCT_COPY_FILES += \
@@ -390,8 +397,8 @@ PRODUCT_PACKAGES += \
     libcodec2_soft_vp8dec \
     libcodec2_soft_vp8enc \
     libcodec2_soft_vp9dec \
-    libcodec2_soft_vp9enc \
-    libcodec2_soft_xaacdec 
+    libcodec2_soft_vp9enc 
+  #  libcodec2_soft_xaacdec 
     
 
 # Overlays
