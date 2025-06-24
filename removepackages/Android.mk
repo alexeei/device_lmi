@@ -8,12 +8,28 @@ ifneq ($(USE_REMOVE_PACKAGES), full)
 LOCAL_OVERRIDES_PACKAGES := Markup \
     MusicFX \
     Music \
-    AndroidAutoStub \
     Chrome \
     Maps \
     Drive \
+    YouTubeMusicPrebuilt \
+    MaestroPrebuilt \
+    WellbeingPrebuilt \
+    PartnerSetupPrebuilt \
+    DreamlinerDreamsPrebuilt \
+    DreamlinerPrebuilt \
+    DreamlinerUpdater \
+    Chrome-Stub \
+    SafetyRegulatoryInfo \
+    GooglePrintRecommendationService \
+    TagGoogle \
+    PixelWallpapers2021 \
+    EmergencyInfoGoogleNoUi \
+    GoogleFeedback \
+    QuickAccessWallet \
+    WallpaperPickerGoogleRelease \
     Photos \
     PrebuiltGmail \
+    CalculatorGooglePrebuilt \
     YouTube \
     Videos \
     RecorderPrebuilt \
@@ -21,15 +37,13 @@ LOCAL_OVERRIDES_PACKAGES := Markup \
     arcore \
     SafetyHubPrebuilt \
 	SafetyRegulatoryInfo \
-    AndroidAutoStubPrebuilt \
 	SoundAmplifierPrebuilt \
 	GooglePrintRecommendationService \
-	SoundAmplifierPrebuilt \
 	Talkback \
     Gallery \
     GrapheneCamera \
+    SoundPickerPrebuilt \
 	SwitchAccessPrebuilt \
-	HealthIntelligenceStubPrebuilt \
 	BetterBugStub \
 	LocationHistoryPrebuilt \
     Panic \
@@ -42,17 +56,19 @@ LOCAL_OVERRIDES_PACKAGES := Markup \
 	Calendar \
 	Etar \
 	PicoTts \
-	DeviceAsWebcam \
 	Gallery2 \
 	Glimpse \
+    CarrierMetrics \
 	PhotoTable \
+    MaestroPrebuilt \
 	Recorder \
 	GoogleTTS \
 	SafetyHubPrebuilt \
+    MarkupGoogle \
 	Photos \
+    TipsPrebuilt \
 	TagGoogle \
 	talkback \
-	OdadPrebuilt \
 	PrebuiltBugle \
 	CreativeAssistant
 

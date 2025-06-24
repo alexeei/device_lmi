@@ -125,6 +125,9 @@ vendor.display.disable_idle_time_video=1
 vendor.display.disable_idle_time_hdr=1
 debug.sf.auto_latch_unsignaled=0
 
+#increase ram consumption but improve smoothness
+debug.sf.disable_client_composition_cache=0
+
 # DPM
 persist.vendor.dpm.feature=1
 persist.vendor.dpm.loglevel=0
@@ -141,32 +144,35 @@ ro.frp.pst=/dev/block/bootdevice/by-name/frp
 vendor.gatekeeper.disable_spu=true
 
 # Graphics
-debug.sf.enable_advanced_sf_phase_offset=1
-debug.sf.enable_gl_backpressure=0
+#debug.sf.enable_advanced_sf_phase_offset=1
+debug.sf.enable_gl_backpressure=1
 debug.sf.high_fps_early_gl_phase_offset_ns=-4000000
 debug.sf.high_fps_early_phase_offset_ns=-4000000
 debug.sf.high_fps_late_app_phase_offset_ns=1000000
 debug.sf.high_fps_late_sf_phase_offset_ns=-4000000
 debug.sf.latch_unsignaled=1
 persist.sys.sf.color_mode=9
-persist.sys.sf.native_mode=0
-ro.surface_flinger.force_hwc_copy_for_virtual_displays=true
+persist.sys.sf.native_mode=2
+#ro.surface_flinger.force_hwc_copy_for_virtual_displays=true
 ro.surface_flinger.has_HDR_display=true
 ro.surface_flinger.has_wide_color_display=true
-ro.surface_flinger.protected_contents=true
+#ro.surface_flinger.protected_contents=true
 ro.vendor.display.touch.idle.enable?=true
- ro.surface_flinger.set_idle_timer_ms?=1000
- ro.surface_flinger.set_touch_timer_ms?=1000
+ro.surface_flinger.set_idle_timer_ms?=1000
+ro.surface_flinger.set_touch_timer_ms?=1000
 ro.surface_flinger.use_color_management=true
 ro.surface_flinger.wcg_composition_dataspace=143261696
 ro.surface_flinger.max_virtual_display_dimension=4096
 ro.surface_flinger.max_frame_buffer_acquired_buffers=3
 debug.sf.enable_transaction_tracing=false
 vendor.display.idle_time?=1100
+vendor.display.vds_allow_hwc=1
 
 #HWUI
 debug.hwui.use_hint_manager=true
-debug.sf.enable_adpf_cpu_hint=true
+#ro.hwui.render_ahead=10
+debug.hwui.target_cpu_time_percent=20
+debug.renderengine.backend=skiaglthreaded
 
 # Keystore
 ro.hardware.keystore_desede=true
