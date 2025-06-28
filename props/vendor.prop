@@ -102,18 +102,18 @@ ro.crypto.allow_encrypt_override=true
 ro.crypto.volume.filenames_mode=aes-256-cts
 
 # Display
-debug.sf.frame_rate_multiple_threshold=81
+debug.sf.frame_rate_multiple_threshold=60
 ro.vendor.display.sensortype=2
 ro.vendor.display.paneltype=2
-ro.surface_flinger.supports_background_blur=1
+ro.surface_flinger.supports_background_blur=0
 vendor.display.comp_mask=2
 vendor.display.disable_excl_rect=0
 vendor.display.disable_excl_rect_partial_fb=1
 vendor.display.disable_hw_recovery_dump=1
 vendor.display.disable_offline_rotator=1
-vendor.display.disable_scaler=0
+vendor.display.disable_scaler=1
 vendor.display.enable_async_powermode=1
-vendor.display.enable_optimize_refresh=1
+vendor.display.enable_optimize_refresh=0
 vendor.display.enable_posted_start_dyn=1
 vendor.display.qdcm.disable_factory_mode=1
 vendor.display.qdcm.mode_combine=1
@@ -124,6 +124,7 @@ vendor.display.enable_allow_idle_fallback=1
 vendor.display.disable_idle_time_video=1
 vendor.display.disable_idle_time_hdr=1
 debug.sf.auto_latch_unsignaled=0
+
 
 #increase ram consumption but improve smoothness
 debug.sf.disable_client_composition_cache=0
@@ -171,9 +172,10 @@ vendor.display.vds_allow_hwc=1
 
 #HWUI
 debug.hwui.use_hint_manager=true
-#ro.hwui.render_ahead=10
-debug.hwui.target_cpu_time_percent=20
+#ro.hwui.render_ahead=3
+debug.hwui.target_cpu_time_percent=30
 debug.renderengine.backend=skiaglthreaded
+#debug.hwui.render_thread_count=2
 
 # Keystore
 ro.hardware.keystore_desede=true
@@ -193,7 +195,7 @@ persist.vendor.data.mode=concurrent
 ro.vendor.use_data_netmgrd=true
 
 # PASR
-vendor.pasr.activemode.enabled=true
+#vendor.pasr.activemode.enabled=true
 
 # Perf
 ro.vendor.extension_library=libqti-perfd-client.so
@@ -258,7 +260,7 @@ persist.vendor.sensors.debug.hal=0
 sys.vendor.shutdown.waittime=500
 
 #Suspend
-suspend.max_sleep_time_millis=40000 
+#suspend.max_sleep_time_millis=40000 
 suspend.short_suspend_backoff_enabled=true 
 suspend.short_suspend_threshold_millis=2000
 
