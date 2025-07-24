@@ -13,6 +13,7 @@ allow system_app proc_pagetypeinfo:file { read };
 allow system_app sysfs_zram:dir { search open read };
 allow system_app sysfs_zram:file { open read };
 allow system_app zygote:unix_stream_socket { getopt };
+allow priv_app zygote:unix_stream_socket getopt;
 
 allow system_app vendor_sysfs_graphics:dir { search };
 allow system_app vendor_sysfs_graphics:file { getattr open read };

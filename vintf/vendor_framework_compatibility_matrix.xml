@@ -99,6 +99,14 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         </interface>
     </hal>
     <hal format="hidl" optional="true">
+         <name>android.frameworks.stats</name>
+         <version>1.0</version>
+         <interface>
+             <name>IStats</name>
+             <instance>default</instance>
+         </interface>
+       </hal>
+    <hal format="hidl" optional="true">
         <name>vendor.nxp.hardware.nfc</name>
         <version>2.0</version>
         <interface>

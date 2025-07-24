@@ -36,13 +36,6 @@ on early-init
     write /proc/sys/kernel/sched_boost 1
 
 on init
-    write /dev/stune/foreground/schedtune.sched_boost_no_override 1
-    write /dev/stune/top-app/schedtune.sched_boost_no_override 1
-    write /dev/stune/schedtune.colocate 0
-    write /dev/stune/background/schedtune.colocate 0
-    write /dev/stune/system-background/schedtune.colocate 0
-    write /dev/stune/foreground/schedtune.colocate 0
-    write /dev/stune/top-app/schedtune.colocate 1
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
     symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
     chown system system /sys/devices/platform/soc/${ro.boot.bootdevice}/auto_hibern8
@@ -51,7 +44,6 @@ on init
     write /sys/block/sda/queue/iosched/group_idle 0
 
     # Setup permissions for Power HAL
-    chown system system /dev/stune/top-app/schedtune.boost
     chown system system /sys/class/kgsl/kgsl-3d0/force_rail_on
     chown system system /sys/class/kgsl/kgsl-3d0/force_clk_on
     chown system system /sys/class/kgsl/kgsl-3d0/idle_timer
@@ -69,7 +61,6 @@ on init
     chown system system /sys/devices/system/cpu/cpu6/cpufreq/scaling_max_freq
     chown system system /sys/devices/system/cpu/cpu6/cpufreq/scaling_min_freq
 
-    chmod 0664 /dev/stune/top-app/schedtune.boost
     chmod 0664 /sys/class/kgsl/kgsl-3d0/force_rail_on
     chmod 0664 /sys/class/kgsl/kgsl-3d0/force_clk_on
     chmod 0664 /sys/class/kgsl/kgsl-3d0/idle_timer
@@ -125,8 +116,6 @@ on early-boot
 on boot
     write /dev/cpuset/audio-app/cpus 1-2
     # set default schedTune value for camera-daemon
-    write /dev/stune/camera-daemon/schedtune.prefer_idle 1
-    write /dev/stune/camera-daemon/schedtune.boost 0
 
     # Setup runtime blkio
      write /dev/blkio/blkio.weight 1000
