@@ -18,7 +18,7 @@ $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 #$(call inherit-product, vendor/gms/common/common-vendor1.mk)
 
 #miuicam
-#$(call inherit-product, vendor/xiaomi/lmi-miuicamera/config.mk)
+$(call inherit-product-if-exists, vendor/xiaomi/camera/miuicamera.mk)
 
 #BCR
 #$(call inherit-product, vendor/xiaomi/bcr/bcr.mk)
@@ -37,11 +37,11 @@ PRODUCT_MODEL := POCO F2 Pro
 TARGET_BUILD_DEVICE_AS_WEBCAM := true
 TARGET_SCREEN_HEIGHT    := 2340
 TARGET_SCREEN_WIDTH     := 1080
-WITH_GMS := true
+WITH_GMS := false
 BUILD_BCR:=true
 TARGET_ENABLE_BLUR := true
 TARGET_BOOT_ANIMATION_RES := 1080
-TARGET_USES_PICO_GAPPS :=true
+TARGET_USES_PICO_GAPPS :=false
 TARGET_DISABLE_EPPE :=true
 TARGET_HAS_UDFPS := true
 TARGET_FACE_UNLOCK_SUPPORTED := true

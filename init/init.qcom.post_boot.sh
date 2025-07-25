@@ -180,7 +180,6 @@ case "$target" in
 	echo 85 85 > /proc/sys/kernel/sched_downmigrate
 	echo 100 > /proc/sys/kernel/sched_group_upmigrate
 	echo 85 > /proc/sys/kernel/sched_group_downmigrate
-	echo 1 > /proc/sys/kernel/sched_walt_rotate_big_tasks
 	echo 400000000 > /proc/sys/kernel/sched_coloc_downmigrate_ns
 
 	# cpuset parameters
@@ -188,8 +187,7 @@ case "$target" in
     write /dev/cpuset/restricted/cpus 0-3
 	echo 0-1     > /dev/cpuset/background/cpus
 	echo 0-3     > /dev/cpuset/system-background/cpus
-	echo 4-6     > /dev/cpuset/foreground/boost/cpus
-	echo 1-6     > /dev/cpuset/foreground/cpus
+	echo 0-6     > /dev/cpuset/foreground/cpus
 	echo 0-7     > /dev/cpuset/top-app/cpus
 
 	# Turn off scheduler boost at the end
@@ -213,14 +211,7 @@ case "$target" in
 	echo 500 > /sys/devices/system/cpu/cpufreq/policy0/schedhorizon/up_rate_limit_us
 
     # Setup runtime schedTune
-     write /dev/stune/foreground/schedtune.prefer_idle 1
-     write /dev/stune/foreground/schedtune.prefer_high_cap 0
-     write /dev/stune/foreground/schedtune.boost 0
-     write /dev/stune/schedtune.prefer_idle 0
-     write /dev/stune/schedtune.prefer_high_cap 0
-     write /dev/stune/schedtune.boost 0
-     write /dev/stune/top-app/schedtune.prefer_idle 1
-     write /dev/stune/top-app/schedtune.prefer_high_cap 0
+  
 
 	# Enable bus-dcvs
 	for device in /sys/devices/platform/soc
