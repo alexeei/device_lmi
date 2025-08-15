@@ -48,6 +48,10 @@ TARGET_FACE_UNLOCK_SUPPORTED := true
 TARGET_INCLUDE_GOOGLE_DIALER := false
 #TARGET_PREBUILT_LAWNCHAIR_LAUNCHER := true
 
+PRODUCT_BUILD_PROP_OVERRIDES +=
+     RisingChipset="Snapdragon 865"
+     RisingMaintainer="a1exeei"
+
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
 BUILD_FINGERPRINT := Redmi/lmi/lmi:12/RKQ1.211001.001/V13.0.3.0.SJKMIXM:user/release-keys

@@ -134,7 +134,7 @@ BOARD_RAMDISK_OFFSET := 0x01000000
 BOARD_RAMDISK_USE_LZ4 := true
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-gnu-
-#BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 #TARGET_KERNEL_CLANG_PATH := $(shell pwd)/prebuilts/clang/host/linux-x86/neutron-clang
 KERNEL_CC := CC=$(TARGET_KERNEL_CLANG_PATH)/bin/clang
 
