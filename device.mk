@@ -99,10 +99,6 @@ PRODUCT_DEXPREOPT_SPEED_APPS += \
     Settings \
     SystemUI
 
-# ANT+
-#PRODUCT_PACKAGES += \
-#    AntHalService-Soong \
-#    com.dsi.ant@1.0.vendor
 
 # Atrace
 PRODUCT_PACKAGES += \
@@ -245,7 +241,7 @@ PRODUCT_PACKAGES += \
 	
 # Fastcharge
 PRODUCT_PACKAGES += \
-    vendor.lineage.fastcharge@1.0-service.xiaomi_sm8250
+    Fastcharge
 
 # FOD
 $(call soong_config_set,surfaceflinger,udfps_lib,//$(LOCAL_PATH):libudfps_extension.xiaomi_lmi)
@@ -431,7 +427,8 @@ PRODUCT_PACKAGES += \
     LmiFrameworks \
     LmiSystemUI \
     WifiResCommon \
-    WifiResTarget
+    WifiResTarget \
+    FastChargeLmi
 
 # Partitions
 PRODUCT_BUILD_SUPER_PARTITION := false
@@ -446,6 +443,7 @@ PRODUCT_PACKAGES += \
     android.hardware.power-service.lineage-libperfmgr \
     libqti-perfd-client 
 
+$(call soong_config_set,qtipower,tap_to_wake_node,/sys/touchpanel/double_tap)
 
 # sendhint utility
 PRODUCT_PACKAGES += \

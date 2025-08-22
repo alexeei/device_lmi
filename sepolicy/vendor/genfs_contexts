@@ -67,6 +67,9 @@ genfscon sysfs /devices/platform/soc/98c000.i2c/i2c-3/3-0034/98c000.i2c:qcom,smb
  genfscon sysfs /devices/virtual/npu/msm_npu/wakeup u:object_r:sysfs_wakeup:s0
 
 
+# FastCharge
+genfscon sysfs /sys/class/qcom-battery/restrict_chg                                                           u:object_r:sysfs_fastcharge:s0
+
 # Extcon sysfs
 
 # FlickerFree
