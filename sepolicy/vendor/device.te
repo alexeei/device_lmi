@@ -9,3 +9,5 @@ type sound_device, dev_type;
 
 type touchfeature_device, dev_type;
 
+
+type lirc_device, dev_type;

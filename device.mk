@@ -270,7 +270,7 @@ PRODUCT_PACKAGES += \
 
 $(call soong_config_set,lineage_health,charging_control_supports_bypass,false)
 
-$(call soong_config_set,libinit,vendor_init_lib,libinit_lmi)
+TARGET_IS_VAB := false
 
 # HotwordEnrollement
 PRODUCT_COPY_FILES += \
@@ -589,5 +589,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/wlan/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf
 
 # WiFi Display
+
+
 PRODUCT_PACKAGES += \
     libdisplayconfig.qti

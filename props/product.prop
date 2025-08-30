@@ -31,3 +31,5 @@ ro.vendor.lmk.force_inkernel_lmk=true
 ro.lmk.enable_userspace_lmk=false
 #ro.lmk.enhance_batch_kill=false
 #ro.lmk.super_critical=701
+
+

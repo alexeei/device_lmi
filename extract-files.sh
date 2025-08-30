@@ -74,9 +74,6 @@ function blob_fixup() {
         vendor/lib/hw/audio.primary.kona.so)
             "${PATCHELF}" --replace-needed "libaudioroute.so" "libaudioroute-v34.so" "${2}"
             ;;
-        vendor/lib64/hw/audio.primary.kona.so)
-            "${PATCHELF}" --replace-needed "libaudioroute.so" "libaudioroute-v34.so" "${2}"
-            ;;
         system_ext/lib64/libwfdservice.so)
             "${PATCHELF}" --replace-needed "android.media.audio.common.types-V2-cpp.so" "android.media.audio.common.types-V4-cpp.so" "${2}"
             "${PATCHELF}" --add-needed "libaudioclient_shim.so" "${2}"
